@@ -2,20 +2,14 @@
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
-(let ((minver 23))
-  (unless (>= emacs-major-version minver)
-    (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(require 'init-benchmarking) ;; Measure startup time
 
-(defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 
+(require 'init-benchmarking)
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
-(require 'init-compat)
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 (require 'init-elpa)      ;; Machinery for installing required packages
@@ -26,17 +20,14 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
-(require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
 
 (require 'init-frame-hooks)
-(require 'init-xterm)
 (require 'init-themes)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
-(require 'init-proxies)
 (require 'init-dired)
 (require 'init-isearch)
 (require 'init-uniquify)
@@ -55,48 +46,33 @@
 (require 'init-editing-utils)
 
 (require 'init-vc)
-(require 'init-darcs)
 (require 'init-git)
 
-(require 'init-crontab)
-(require 'init-textile)
 (require 'init-markdown)
-(require 'init-csv)
-(require 'init-erlang)
 (require 'init-javascript)
 (require 'init-php)
-(require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
 (require 'init-haml)
 (require 'init-python-mode)
-(require 'init-haskell)
 (require 'init-ruby-mode)
 (require 'init-rails)
 (require 'init-sql)
+(require 'init-jade)
 
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
-(require 'init-clojure)
-(when (>= emacs-major-version 24)
-  (require 'init-clojure-cider))
-(require 'init-common-lisp)
-
-(when *spell-check-support-enabled*
-  (require 'init-spelling))
 
 (require 'init-marmalade)
 (require 'init-misc)
 
+(require 'init-editorconfig)
 (require 'init-dash)
-(require 'init-ledger)
 ;; Extra packages which don't require any configuration
 
-(require-package 'gnuplot)
 (require-package 'lua-mode)
-(require-package 'htmlize)
 (require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
