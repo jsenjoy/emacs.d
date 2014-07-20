@@ -42,6 +42,8 @@
 
 (transient-mark-mode t)
 
+;; line number
+(global-linum-mode t)
 
 ;;; Whitespace
 

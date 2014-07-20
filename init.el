@@ -60,6 +60,7 @@
 (require 'init-rails)
 (require 'init-sql)
 (require 'init-jade)
+(require 'init-emmet)
 
 (require 'init-paredit)
 (require 'init-lisp)
