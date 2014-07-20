@@ -71,8 +71,10 @@
 
 (require 'init-editorconfig)
 (require 'init-dash)
-;; Extra packages which don't require any configuration
 
+;; Extra packages which don't require any configuration
+(require-package 'evil)
+(evil-mode 1)
 (require-package 'lua-mode)
 (require-package 'dsvn)
 (when *is-a-mac*
