@@ -1,4 +1,4 @@
-# A Emacs config from Purcell, customize by me
+# From Purcell and Customize by me
 
 Keep which I need in purcell's configure.
 Remove some I don't need.
@@ -73,6 +73,4 @@ of this code, and that you have updated your packages to the most recent availab
 versions (see "Updates" above). If you still experience problems, go ahead and
 [file an issue on the github project](https://github.com/purcell/emacs.d).
 
--Boom
-
-<hr>
+-Boom Lee
