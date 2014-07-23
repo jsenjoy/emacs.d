@@ -61,7 +61,6 @@
 (require 'init-sql)
 (require 'init-jade)
 (require 'init-emmet)
-
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
@@ -76,6 +75,8 @@
 (require-package 'evil)
 (evil-mode 1)
 (require-package 'lua-mode)
+(require-package 'handlebars-mode)
+(add-to-list 'auto-mode-alist '("\\.hbs$" . handlebars-mode))
 (require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
